@@ -1,0 +1,18 @@
+def calcula_fo(n, sol, cap, b, p):
+    fo = 0 #Valor da Função Objetivo
+    c = 0  #Peso atual da Mochila
+    for i in range(len(sol)):
+        fo = fo + b[sol[i]]
+        c = c + p[sol[i]]
+    if c > cap:
+        return print('Solução Inviável!!!')
+    return fo
+
+n = 8 #Quantidade de objetos
+beneficio = [4, 3, 2, 6, 2, 3, 5, 4]
+peso =      [5, 4, 3, 9, 4, 2, 6, 7]
+cap = 20 #Capacidade da mochila
+
+sol = [2, 3, 5, 7]
+
+calcula_fo(n, sol, cap, beneficio, peso)
